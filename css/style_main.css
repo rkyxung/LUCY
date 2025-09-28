@@ -1,0 +1,1394 @@
+@charset "UTF-8";
+
+/*=============RESET=============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    /* font-optical-sizing: auto; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    /* font-weight: 500; */
+    /*max-width: 100%*/
+    /*max-width = 반응형 웹*/
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------------ */
+
+
+/*=============header=============*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 500;
+    font-size: 28px;
+    width: 100%;
+    height: 60px;
+    background: #0066FF;
+    padding: 0 50px 0 30px;
+    position: fixed;
+    z-index: 10;
+}
+
+header ul {
+    display: flex;
+    margin-left: auto;
+    padding-right: 30px;
+    gap: 60px;
+    color: #fff;
+    
+}
+
+.navigation {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 400;
+    font-size: 20px;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    padding-top: 5px;
+    background: linear-gradient(180deg, rgba(0,102,255,1), rgba(0,102,255,0.3) 80%, rgba(0,102,255,0) 100%);
+    /* background: #0066FF; */
+    /* padding: 5px 50px 0 30px; */
+    position: fixed;
+    z-index: 10;
+}
+
+.navigation ul {
+    justify-content: flex-end;
+    display: flex;
+    margin-left: auto;
+    color: #fff;
+    
+    
+}
+
+.ul_about {
+    position: absolute;
+    right: 19.4%;
+}
+
+.ul_profile {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    right: 10.5%;
+    text-align: center;
+    gap: 15px;
+}
+
+.ul_album {
+    position: absolute;
+    right: 4.2%;
+}
+
+header:hover .navigation {
+            display: block;
+}
+
+a:link {
+    color: #fff;
+}
+
+a:visited {
+    color: #fff;
+}
+
+a:hover {
+    color: #000;
+}
+
+
+.home_logo {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    margin: 0 30px;
+    transform: translate(-50%, -50%);
+}
+
+.home_logo a {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-image: url(../image/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home_logo a:hover {
+    background-image: url(../image/logo_black.png);
+}
+
+
+/* -------배너 이미지-------- */
+
+
+
+.banner {
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 1080px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;  
+    z-index: 3;
+}
+
+
+.banner_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 300px;
+    background-image: url(../image/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 3;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+
+.banner_logo:hover {
+    animation: banner_logo 1.5s forwards;
+}
+
+
+@keyframes banner_logo {
+    12.5% {background-image: url(../image/bl_1.png);}
+    25% {background-image: url(../image/bl_2.png);}
+    37.5% {background-image: url(../image/bl_3.png);}
+    50% {background-image: url(../image/bl_4.png);}
+    62.5% {background-image: url(../image/bl_5.png);}
+    75% {background-image: url(../image/bl_6.png);}
+    87.5% {background-image: url(../image/bl_7.png);}
+    100% {background-image: url(../image/bl_8.png);}
+}
+
+.banner .list li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio:1/1;  */
+    /* width랑 height 값 동일하게 조절 가능 */
+    opacity: 0;
+    
+}
+
+.banner .list li:first-child {
+    opacity: 1;
+}
+
+
+
+
+.banner .list li:target {
+    opacity: 1;
+}
+
+/* #banner3:target ~ .list .banner_logo {
+    display: none;
+} */
+
+
+/* 배너 이미지가 비율을 유지하도록 수정 */
+.banner .list li img {
+    position: absolute;
+    width: 100%;  
+    height: auto;  
+    object-fit: cover;  
+    object-position: center;
+}
+
+.banner .list li video {
+    position: absolute;
+    width: 100%;   
+    height: auto;  
+    object-fit: cover;  
+    object-position: center;
+    z-index: 3;
+}
+
+
+.banner .nav {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);  
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 5;
+}
+
+.banner .nav a {
+    padding: 5px 15px;
+    margin: 0 10px;
+    background: rgba(255, 255, 255, .3);
+    font-size: 15px;
+    border-radius: 50%;
+    /* z-index: 10; */
+}
+
+.banner .nav a:hover {
+    background: rgba(0,102,255,0.3);
+}
+
+
+
+/* ------------------------about Lucy--------------------------- */
+
+#about_lucy {
+    position: relative;
+    width: 100%;
+    height: 1080px;
+    /* background: linear-gradient(rgba(255,255,255)20%, rgba(0,102,255,0.8)); */
+    z-index: 2;
+    margin-top: 80px;
+    /* background: #0066FF; */
+    /* margin-top: 30px; */
+}
+
+#about_lucy a {
+    color: #000;
+
+}
+
+#about_lucy a:hover {
+    text-decoration: underline;
+
+}
+
+.about_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62.5%;
+    height: 800px;
+    
+
+}
+
+.about_logo p {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+#about_logo_img {
+    position: absolute;
+    top: 7px;
+    left: 135px;
+    width: 150px;
+    height: 45px;
+    background-image: url(../image/bl_8.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#about_text {
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    width: 62%;
+    height: 200px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    transform: translate(-50%, -50%);
+    /* animation: pung 5s ease;
+    animation-timeline: view(); */
+}
+
+@keyframes pung {
+    0% {opacity: 0;}
+    60% {opacity: 0;}
+    80% {opacity: 1;}
+    /* 100% {opacity: 1;} */
+}
+
+
+
+input[id *="FAQ"] {
+    display: none;
+}
+
+input[id *="FAQ"]+label {
+    display: block;
+    position: relative;
+    padding: 15px;
+    /* border: 1px transparent; */
+    /* border-bottom: 0; */
+    color: #fff;
+    background-color: #0066FF;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+input[id *="FAQ"]+label em {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 30px;
+}
+
+input[id *="FAQ"]+label:hover {
+    background-color: #0047b2;
+}
+
+
+.about_FAQ {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 50%;
+    /* transition: 1s; */
+    width: 62.5%;
+    /* min-width: 400px; */
+    font-size: 20px;
+    margin: 0 auto;
+    animation: pung01 5s ease;
+    animation-timeline: view();
+}
+
+@keyframes pung01 {
+    0% {opacity: 0;}
+    /* 10% {opacity: 0;} */
+    60% {opacity: 1;}
+    /* 100% {opacity: 1;} */
+}
+
+.answer {
+    height: 0;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+
+
+.about_FAQ input+label+.answer {
+    transform: translateZ(0); 
+    transition: all 0.3s;
+    /* transition: .6s; */
+    /* opacity: 0; */
+    background-color: rgba(0,102,255,0.2);
+    /* visibility: hidden; */
+    transform: translateY(-10px);
+    z-index: -1;
+    /* max-height: 0; */
+    font-weight: 500;
+
+}
+
+
+.about_FAQ input:checked+label+.answer {
+    height: auto;
+    padding: 20px; 
+    transition: all .3s; 
+    /* opacity: 1; */
+    /* visibility: visible;
+    max-height: 400px;
+    transform: translate(0); */
+}
+
+/* -----------------------------profile--------------------------------------- */
+#profile {
+    position: relative;
+    width: 100%;
+    height: 1080px;
+    background: rgb(0,102,255);
+    overflow: hidden;
+}
+
+.defult_text01 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #fff;
+    line-height: 170px;
+}
+
+.defult_text02 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    font-size: 100px;
+    color: #fff;
+    line-height: 170px;
+}
+
+.defult_text01 p {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.defult_text02 p {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.yechan_text01 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #fff;
+}
+
+.yechan_text02 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    font-size: 100px;
+    color: #fff;
+}
+
+.yechan_text01 p {
+    animation: text01 8s infinite;
+    line-height: 170px;
+}
+
+.yechan_text02 p {
+    animation: text02 8s infinite;
+    line-height: 170px;
+}
+
+.sangyeop_text01 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #fff;
+}
+
+.sangyeop_text02 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    font-size: 100px;
+    color: #fff;
+}
+
+.sangyeop_text01 p {
+    animation: text01 8s infinite;
+    line-height: 170px;
+}
+
+.sangyeop_text02 p {
+    animation: text02 8s infinite;
+    line-height: 170px;
+}
+
+.wonsang_text01 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #fff;
+}
+
+.wonsang_text02 {
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    /* transform: translate(0%, -50%); */
+    font-size: 100px;
+    color: #fff;
+}
+
+.wonsang_text01 p {
+    animation: text01 8s infinite;
+    line-height: 170px;
+}
+
+.wonsang_text02 p {
+    animation: text02 8s infinite;
+    line-height: 170px;
+}
+
+.kwangil_text01 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #fff;
+}
+
+.kwangil_text02 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 170px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(0,0,0,0);
+    font-size: 100px;
+    color: #fff;
+}
+
+.kwangil_text01 p {
+    animation: text01 8s infinite;
+    line-height: 170px;
+}
+
+.kwangil_text02 p {
+    animation: text02 8s infinite;
+    line-height: 170px;
+}
+
+
+@keyframes text01 {
+    0% {
+      transform: translateX(-50%);
+    }
+
+    100% {
+      transform: translateX(110%);
+    }
+  }
+
+@keyframes text02 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+#profile ul {
+    position: absolute;
+    display: flex;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    gap: 30px;
+    font-size: 24px;
+    
+}
+
+.profile_item {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#yechan_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background-image: url(../image/yechan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sangyeop_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background-image: url(../image/sangyeop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#wonsang_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background-image: url(../image/wonshang.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#kwangil_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background-image: url(../image/kwangil.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile_name ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile_name li {
+    margin-bottom: 10px;
+    
+}
+
+.profile_name li a {
+    width: 0;
+    position: relative;
+}
+
+.profile_name li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: all .5s ease-out;
+    bottom: -5px;
+}
+
+.profile_name li a:hover {
+    color: #fff;
+}
+
+.profile_name li a:hover::after {
+    width: 100%;
+}
+
+
+.profile_list #yechan, #sangyeop, #wonsang, #kwangil {
+    display: none;
+}
+
+
+#yechan:target {
+    display: block;
+}
+
+
+#yechan:target ~ #profile_defult,
+#sangyeop:target ~ #profile_defult,
+#wonsang:target ~ #profile_defult,
+#kwangil:target ~ #profile_defult {
+    display: none;
+}
+
+#yechan .yechan_text01, #yechan .yechan_text02, #yechan #yechan_img {
+    display: block;
+}
+
+#sangyeop:target {
+    display: block;
+}
+
+#sangyeop .sangyeop_text01, #sangyeop .sangyeop_text02, #sangyeop #sangyeop_img {
+    display: block;
+}
+
+
+#wonsang:target {
+    display: block;
+}
+
+#wonsang .wonsang_text01, #wonsang .wonsang_text02, #wonsang #wonsang_img {
+    display: block;
+}
+
+#kwangil:target {
+    display: block;
+}
+
+#kwangil .kwangil_text01, #kwangil .kwangil_text02, #kwangil #kwangil_img {
+    display: block;
+}
+
+#yechan_img a {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+}
+
+#sangyeop_img a {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+}
+
+#wonsang_img a {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+}
+
+#kwangil_img a {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal_content {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 62.5%;
+    height: 700px;
+}
+
+.modal_content img {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(0, -50%);
+    width: 35%;
+    height: 80%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: slide 12s infinite;
+    opacity: 0;
+    border-radius: 20px;
+}
+
+@keyframes slide {
+    0% { opacity: 0;}
+    10% { opacity: 1;}
+    40% { opacity: 1;}
+    50% { opacity: 0;}
+    100% { opacity: 0;}
+}
+
+.modal_content #yechan01 {
+    animation-delay: 0s;
+}
+
+.modal_content #yechan02 {
+    animation-delay: 4s;
+}
+
+.modal_content #yechan03 {
+    animation-delay: 8s;
+}
+
+.modal_content #sangyeop01 {
+    animation-delay: 0s;
+}
+
+.modal_content #sangyeop02 {
+    animation-delay: 4s;
+}
+
+.modal_content #sangyeop03 {
+    animation-delay: 8s;
+}
+
+.modal_content #wonsang01 {
+    animation-delay: 0s;
+}
+
+.modal_content #wonsang02 {
+    animation-delay: 4s;
+}
+
+.modal_content #wonsang03 {
+    animation-delay: 8s;
+}
+
+.modal_content #kwangil01 {
+    animation-delay: 0s;
+}
+
+.modal_content #kwangil02 {
+    animation-delay: 4s;
+}
+
+.modal_content #kwangil03 {
+    animation-delay: 8s;
+}
+
+
+.yechan_desc {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: 10px;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #000;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.yechan_desc .name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0066FF;
+    /* margin-bottom: 100px; */
+}
+
+.yechan_desc .info {
+    font-weight: bold;
+}
+
+.yechan_desc .style {
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.sangyeop_desc {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: 10px;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #000;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.sangyeop_desc .name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0066FF;
+    /* margin-bottom: 100px; */
+}
+
+.sangyeop_desc .info {
+    font-weight: bold;
+}
+
+.sangyeop_desc .style {
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.wonsang_desc {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: 10px;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #000;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.wonsang_desc .name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0066FF;
+    /* margin-bottom: 100px; */
+}
+
+.wonsang_desc .info {
+    font-weight: bold;
+}
+
+.wonsang_desc .style {
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.kwangil_desc {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: 10px;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #000;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.kwangil_desc .name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0066FF;
+    /* margin-bottom: 100px; */
+}
+
+.kwangil_desc .info {
+    font-weight: bold;
+}
+
+.kwangil_desc .style {
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+
+
+
+
+.close_btn {
+    position: absolute;
+    top: 7px;
+    right: 25px;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+a.close_btn {
+    color: #0066ff;
+}
+
+
+.modal:target {
+    display: flex;
+}
+
+.videopage {
+    position: absolute;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-weight: 450;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0066FF; 
+    color: #fff; 
+    border-radius: 24px; 
+    right: 23%;
+    bottom: 10%;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.videopage:hover {
+    background-color: #004BB5; 
+    transform: scale(1.05); 
+}
+
+.videopage:active {
+    background-color: #003B8A; 
+    transform: scale(1); 
+}
+
+.videopage a:active {
+    color: #fff;
+}
+
+.videopage a:hover {
+    color: #fff;
+}
+
+
+ /* ---------------------------------album-------------------------------- */
+
+
+#album {
+    width: 100%;
+    max-width: 62.5%;
+    margin: 100px auto;
+    position: relative; 
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.album_name {
+    color: #0066FF;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+
+.album_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-items: center;
+    list-style: none;
+    padding-top: 50px;
+    margin: 0;
+}
+
+.hidden_section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-items: center;
+    list-style: none;
+    /* padding-top: 100px;
+    margin: 0; */
+}
+
+/* 각 앨범 아이템 스타일 */
+.album_item {
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #fff;
+    overflow: hidden;
+    margin: 20px 0 20px 0;
+    box-shadow: 0 4px 20px rgba(0,102,255, 0.3);
+}
+
+.album_item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.album_item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease;
+
+}
+
+/* .CD {
+    background-image: url(../image/CD.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+} */
+
+
+
+#album_item01::before { background-image: url(../image/album01.png); }
+#album_item02::before { background-image: url(../image/album02.png); }
+#album_item03::before { background-image: url(../image/album03.png); }
+#album_item04::before { background-image: url(../image/album04.png); }
+#album_item05::before { background-image: url(../image/album05.png); }
+#album_item06::before { background-image: url(../image/album06.png); }
+#album_item07::before { background-image: url(../image/album07.png); }
+#album_item08::before { background-image: url(../image/album08.png); }
+#album_item09::before { background-image: url(../image/album09.png); }
+#album_item10::before { background-image: url(../image/album10.png); }
+#album_item11::before { background-image: url(../image/album11.png); }
+#album_item12::before { background-image: url(../image/album12.png); }
+#album_item13::before { background-image: url(../image/album13.png); }
+#album_item14::before { background-image: url(../image/album14.png); }
+#album_item15::before { background-image: url(../image/album15.png); }
+
+
+
+.album_item:hover::before {
+    filter: blur(7px);
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.album_item:hover {
+    border: 8px solid #fff;
+}
+
+
+.album_item::after {
+    content: ''; 
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 600;
+    white-space: pre-line;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+#album_item01:hover::after { content: 'FROM. \A 2024.08.14'; }
+#album_item02:hover::after { content: '못 죽는 기사와 비단 요람 \A 2024.03.20'; }
+#album_item03:hover::after { content: 'Boogie Man \A 2023.12.05'; }
+#album_item04:hover::after { content: '열 \A 2023.08.17'; }
+#album_item05:hover::after { content: 'INSERT COIN \A 2023.02.23'; }
+#album_item06:hover::after { content: 'Childhood \A 2022.08.17'; }
+#album_item07:hover::after { content: '항상 엔진을 켜둘께 \A 2022.05.18'; }
+#album_item08:hover::after { content: 'Feel so good \A 2022.05.08'; }
+#album_item09:hover::after { content: 'Oh-eh \A 2022.04.07'; }
+#album_item10:hover::after { content: '쉬운 답 \A 2022.03.31'; }
+#album_item11:hover::after { content: 'BLUE \A 2021.12.07'; }
+#album_item12:hover::after { content: 'INSIDE \A 2021.02.16'; }
+#album_item13:hover::after { content: '선잠 \A 2020.11.12'; }
+#album_item14:hover::after { content: 'PANORAMA \A 2020.08.13'; }
+#album_item15:hover::after { content: 'DEAR. \A 2020.05.08'; }
+
+
+.album_item:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+.hidden_section {
+    display: none;
+}
+
+
+#album label {
+    display: inline-flex; 
+    position: relative;
+    width: 150px;
+    height: 40px;
+    background: #0066FF;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 45px;
+    z-index: 10;
+
+}
+
+
+#album label::before {
+    content: 'Load more';
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+
+input[type="checkbox"]:checked ~ .hidden_section {
+    display: grid;
+}
+
+input[type="checkbox"]:checked ~ #album_label::before {
+    content: 'Hide';
+}
+
+input[type="checkbox"]:checked ~ #album_label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* -------------------------------footer-------------------------------- */
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    background: #0066FF;
+    padding: 20px 16px; 
+    color: #fff; 
+}
+
+footer .footer_logo {
+    width: 120px;
+    height: 80px;
+    background-image: url(../image/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+footer p {
+    font-size: 18px;
+    margin-top: 4px;
+    color: white;
+}
+
+
+footer .sns {
+    display: flex;
+    gap: 15px;
+    width: auto; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .sns li {
+    width: 40px;
+    height: 40px;
+    padding-top: 5px;
+}
+
+footer .sns a {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+footer .sns .twitter a {
+    display: block;
+    background-image: url('../image/twi_fff.png');
+
+}
+
+footer .sns .twitter a:hover {
+    background-image: url('../image/twi_000.png');
+}
+
+footer .sns .instagram a {
+    display: block;
+    background-image: url('../image/insta_fff.png');
+
+}
+
+footer .sns .instagram a:hover {
+    background-image: url('../image/insta_000.png');
+}
+
+footer .sns .facebook a {
+    display: block;
+    background-image: url('../image/face_fff.png');
+
+}
+
+footer .sns .facebook a:hover {
+    background-image: url('../image/face_000.png');
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCY ALBUM</title>
+    <link rel="stylesheet" href="css/style_album.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2092b2d606.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div class="home_logo">
+            <a href="index.html"></a>
+                <!-- <img src="image/logo.png" width=80px height=auto alt="홈로고"> -->
+        </div>
+        <ul>
+            <li><a href="index.html#about_lucy">ABOUT</a></li>
+            <li><a href="index.html#profile">PROFILE</a></li>
+            <li><a href="index.html#album">ALBUM</a></li>
+        </ul>
+        <div class="navigation">
+            <ul>
+                <li class="ul_about">
+                    <a href="index.html#about_lucy">About LUCY</a>
+                </li>
+                <li>
+                    <ul class="ul_profile">
+                        <li><a href="index.html#modal_yechan">Yechan</a></li>
+                        <li><a href="index.html#modal_sangyeop">Sangyeop</a></li>
+                        <li><a href="index.html#modal_wonsang">Wonsang</a></li>
+                        <li><a href="index.html#modal_kwangil">Kwangil</a></li>
+                    </ul>
+                </li>
+                <li class="ul_album">
+                    <a href="album.html">Album Info</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <!-- 앨범 아트 (앨범 커버와 레코드) -->
+        <div class="album-art">
+            <div class="cover"></div>
+            <div class="record"></div>
+        </div>
+        
+        <!-- 앨범 정보 영역 -->
+        <div class="playlist">
+            <div class="header">
+                <!-- 앨범 제목과 favorite 버튼 -->
+                <div class="title">FROM.</div>
+                <input type="checkbox" id="favorite" class="favorite-checkbox">
+                <label for="favorite" class="favorite"></label>
+            </div>
+            
+            <!-- 앨범 설명 -->
+            <div class="description">
+                <p>LUCY 5th EP</p> <br>
+
+                애정을 담아 보내는 편지의 서문인 ‘DEAR.’를 통해 파랗게 개화한 LUCY가 신보 으로 함께 피워낸 꽃의 마지막 장면을 담아내었다.
+                만개 후 흩날리는 꽃잎은 소명을 다하고 지는 것처럼 보이지만 다시 아름답게 피워낼 날을 기약하는 약속의 순환이다.
+                지는 순간까지도 아름다워 보이는 꽃잎들도 저마다의 시련을 이겨내고 다시 싹을 피워내는 것처럼 누구에게나 아름답고 어두운 양면의 시기들이 존재한다.
+                흔히 빛을 희망에 빗대어 이야기하지만 어둠 또한 또 다른 희망을 의미하기에 은 가장 어두운 나를 조명하며, 다시 찾아내고 피워낼 아름다움을 이야기한다.
+            </div>
+            
+            <!-- 트랙 목록 -->
+            <div class="tracks">
+                <div class="track" id="track01">
+                    <a href="album_track.html">TRACK 1. 빌런 (Title)</a>
+                    <audio class="track_audio" controls loop>
+                        <source src="image/track01.mp4" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="play-pause"></button>
+                </div>
+                
+                <div class="track" id="track02">
+                    <a href="#">TRACK 2. 못난이 (Title)</a>
+                    <audio class="track_audio" controls loop>
+                        <source src="image/track02.mp4" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="play-pause"></button>
+                </div>
+
+                <div class="track" id="track03">
+                    <a href="#">TRACK 3. 도깨비춤</a>
+                    <audio class="track_audio" controls loop>
+                        <source src="image/track03.mp4" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="play-pause"></button>
+                </div>
+
+                <div class="track" id="track04">
+                    <a href="#">TRACK 4. 남김없이</a>
+                    <audio class="track_audio" controls loop>
+                        <source src="image/track04.mp4" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="play-pause"></button>
+                </div>
+
+                <div class="track" id="track05">
+                    <a href="#">TRACK 5. 낙화</a>
+                    <audio class="track_audio" controls loop>
+                        <source src="image/track05.mp4" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="play-pause"></button>
+                </div>
+
+                
+
+                <script>
+                document.body.addEventListener('click', function() {
+                    const audio = document.getElementById('backgroundMusic');
+                    audio.play().catch(error => {
+                        console.error("Audio play failed:", error);
+                    });
+                }, { once: true }); // Play only once when user interacts
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer_logo"></div>
+        <p>&copy;김가영</p>
+        <ul class="sns">
+            <li class="twitter">
+                <a href="https://x.com/BANDLUCY_mystic" target="_blank"></a>
+            </li>
+            <li class="instagram">
+                <a href="https://www.instagram.com/band_lucy?igsh=MW5leDJieWRmdWdzaw==" target="_blank"></a>
+            </li>
+            <li class="facebook">
+                <a href="https://www.facebook.com/share/1JgqUyqu2z/?mibextid=LQQJ4d" target="_blank"></a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+</html>
